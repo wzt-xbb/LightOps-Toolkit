@@ -1,0 +1,13 @@
+# crontab -e 后添加以下内容
+
+# 每 10 分钟执行一次端口检测
+*/10 * * * * /usr/bin/python3 /opt/lightops/scripts/port_monitor.py  --config /opt/lightops/config/ports.conf --log /opt/lightops/logs/port_monitor.log >> /opt/lightops/logs/cron.log 2>&1
+
+# 每小时执行一次服务器巡检
+0 * * * * /opt/lightops/scripts/system_check.sh >> /opt/lightops/logs/cron.log 2>&1
+
+# 每天凌晨 02:30 备份 MySQL
+30 2 * * * /opt/lightops/scripts/mysql_backup.sh >> /opt/lightops/logs/cron.log 2>&1
+
+# 每天 08:00 分析业务日志
+0 8 * * * /usr/bin/python3 /opt/lightops/scripts/log_analyzer.py --log /var/log/lightops-demo/app.log --output /opt/lightops/reports/app_log_daily.txt >> /opt/lightops/logs/cron.log 2>&1
