@@ -1,0 +1,7 @@
+2026-09-10 08:00:01 INFO application started
+2026-09-10 08:00:10 INFO request completed status=200
+2026-09-10 08:01:15 WARN slow query detected cost=1200ms
+2026-09-10 08:02:20 ERROR database connection failed
+2026-09-10 08:02:25 ERROR database connection failed
+2026-09-10 08:03:30 CRITICAL worker process unavailable
+2026-09-10 08:04:10 INFO request completed status=200
