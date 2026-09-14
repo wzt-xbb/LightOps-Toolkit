@@ -1,7 +1,7 @@
 # crontab -e 后添加以下内容
 
 # 每 10 分钟执行一次端口检测
-*/10 * * * * /usr/bin/python3 /opt/lightops/scripts/port_monitor.py  --config /opt/lightops/config/ports.conf --log /opt/lightops/logs/port_monitor.log >> /opt/lightops/logs/cron.log 2>&1
+*/10 * * * * /usr/bin/python3 /opt/lightops/scripts/port_monitor.py --config /opt/lightops/config/ports.conf --log /opt/lightops/logs/port_monitor.log >> /opt/lightops/logs/cron.log 2>&1
 
 # 每小时执行一次服务器巡检
 0 * * * * /opt/lightops/scripts/system_check.sh >> /opt/lightops/logs/cron.log 2>&1
