@@ -1,0 +1,19 @@
+# Sensitive configs
+config/lightops.env
+config/mysql.cnf
+
+# Runtime files
+logs/*
+!logs/.gitkeep
+reports/*
+!reports/.gitkeep
+backups/*
+!backups/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
+.idea/
